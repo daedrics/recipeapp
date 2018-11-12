@@ -1,0 +1,66 @@
+<div class="text-center mt-4">
+    <form class="form-signin" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+        <img class="mb-4" src="../../../assets/images/recipe-big.png" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+        <label class="sr-only">Name</label>
+        <input type="text" formControlName="name" class="form-control mb-2"
+               [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
+               placeholder="Name">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback text-left">
+            <div *ngIf="f.name.errors.required">Name is required</div>
+        </div>
+
+
+        <label class="sr-only">Surname</label>
+        <input type="text" formControlName="surname" class="form-control mb-2"
+               [ngClass]="{ 'is-invalid': submitted && f.surname.errors }"
+               placeholder="Surname">
+        <div *ngIf="submitted && f.surname.errors" class="invalid-feedback text-left">
+            <div *ngIf="f.surname.errors.required">Surname is required</div>
+        </div>
+
+        <label class="sr-only">Email</label>
+        <input type="text" formControlName="email" class="form-control mb-2"
+               [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+               placeholder="Email">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback text-left">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+        </div>
+
+        <label class="sr-only">Username</label>
+        <input type="text" formControlName="username" class="form-control mb-2"
+               [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
+               placeholder="Username">
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback text-left">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+
+        <label class="sr-only">Password</label>
+        <input type="password" formControlName="password" class="form-control mb-2"
+               [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+               placeholder="Password">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback text-left">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+        </div>
+
+        <label class="sr-only">Gender</label>
+        <select formControlName="gender" [ngClass]="{ 'is-invalid': submitted && f.gender.errors }"
+                class="custom-select mb-2">
+            <option [ngValue]="null">Select Gender</option>
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+        </select>
+        <div *ngIf="submitted && f.gender.errors" class="invalid-feedback text-left mb-2">
+            <div *ngIf="f.gender.errors.required">Gender is required</div>
+        </div>
+
+        <button class="btn btn-save btn-block mt-1"><i class="fa fa-user-plus" aria-hidden="true"></i> Sign up</button>
+        <p class="mt-2 mb-2 text-muted">OR</p>
+        <button [routerLink]="['/login']" class="btn btn-outline-custom btn-block" type="submit"><i
+                class="fa fa-unlock-alt"
+                aria-hidden="true"></i> Sign in
+        </button>
+
+    </form>
+</div>

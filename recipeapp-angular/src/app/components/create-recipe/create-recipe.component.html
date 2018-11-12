@@ -1,0 +1,108 @@
+<div class="row mt-2 p-3">
+    <!--image preview-->
+    <div class="col-6">
+        <div class="card">
+            <img class="card-img-top"
+                 [src]="previewImage || 'http://www.independentmediators.co.uk/wp-content/uploads/2016/02/placeholder-image.jpg'"
+
+                 alt="Card image cap">
+            <div class="card-body">
+                <div class="d-flex flex-row-reverse mb-3">
+                    <div class="p-2 text-active">{{f.calories.value}} cals <i class="fa fa-bar-chart"
+                                                                              aria-hidden="true"></i></div>
+                    <div class="p-2 text-active">{{f.servings.value}} servings <i class="fa fa-pie-chart"
+                                                                                  aria-hidden="true"></i></div>
+                    <div class="p-2 text-active">{{ calculatedTime()}} min <i class="fa fa-clock-o"
+                                                                              aria-hidden="true"></i></div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="col-12 mb-2" [hidden]="!uploadPercent">
+                    <ngb-progressbar showValue="true" type="success" [value]="uploadPercent | async"></ngb-progressbar>
+                </div>
+                <div class="col-12 px-0">
+                    <div class="form-group">
+                        <label class="sr-only">File</label>
+                        <div class="input-group">
+                            <input type="text" name="filename" [placeholder]="fileName || 'No image selected'"
+                                   class="form-control" readonly>
+                            <span class="input-group-btn">
+                            <div class="btn btn-default  custom-file-uploader">
+                            <input (change)="upload($event)" type="file" name="file"/>
+                            Select an image
+                            </div>
+                        </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6 ">
+        <!--select time-->
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label>Time</label>
+                    <div class="d-flex justify-content-center">
+                        <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" formControlName="name" class="form-control"
+                               [ngClass]="{ 'is-invalid': submitted && f.name.errors }"/>
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <label>Servings</label>
+                            <input type="number" formControlName="servings" class="form-control"
+                                   [ngClass]="{ 'is-invalid': submitted && f.servings.errors }"/>
+                            <div *ngIf="submitted && f.servings.errors" class="invalid-feedback">
+                                <div *ngIf="f.servings.errors.required">Servings are required</div>
+                                <div *ngIf="f.servings.errors.min">Servings should be greater than 0</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label>Calories</label>
+                            <input type="number" class="form-control" formControlName="calories"
+                                   [ngClass]="{ 'is-invalid': submitted && f.calories.errors }"/>
+                            <div *ngIf="submitted && f.calories.errors" class="invalid-feedback">
+                                <div *ngIf="f.calories.errors.required">Calories are required</div>
+                                <div *ngIf="f.calories.errors.min">Calories should be greater than 0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea class="form-control" formControlName="description" rows="4"
+                                  [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+                        <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                            <div *ngIf="f.description.errors.required">Description is required</div>
+                        </div>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" formControlName="published" type="checkbox">
+                        <label class="form-check-label">
+                            Published
+                        </label>
+                    </div>
+                    <div class="form-group mt-4">
+                        <button class="btn btn-save"><i class="fa fa-save"></i> Save</button>
+                        <button class="btn btn-light ml-1" type="reset" (click)="reset()"><i class="fa fa-retweet"></i> Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

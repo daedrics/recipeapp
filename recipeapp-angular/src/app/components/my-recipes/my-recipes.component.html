@@ -1,0 +1,3 @@
+<app-filters (searchText)="filterRecipes($event)" [title]="title"></app-filters>
+<app-table (getItem)="getRecipes($event)" [items]="recipes" [totalPages]="totalPages" [hasPagination]="true" [publishedColumn]="true"
+           [loadingItems]="loading"></app-table>

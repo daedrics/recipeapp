@@ -1,0 +1,26 @@
+<div class="row mt-5">
+    <h5 class="ml-4">{{title}}</h5>
+</div>
+
+<div class="row mt-2 pl-0">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="d-flex justify-content-md-end justify-content-sm-start justify-content-xs-start">
+            <div class="p-1">
+                <div class="group">
+                    <input type="text" required (keyup)="onSearchChange($event.target.value)">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Search</label>
+                </div>
+            </div>
+            <div class="p-1">
+                <a [routerLink]="['/create']">
+                    <button type="button" class="px-4 btn btn-primary btn-add py-2">
+                        <i class="fa fa-plus"></i>
+                        Add Recipe
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

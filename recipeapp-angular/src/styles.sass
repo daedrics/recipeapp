@@ -1,0 +1,187 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css"
+@import "~font-awesome/css/font-awesome.css"
+@import '~ngx-toastr/toastr.css'
+$base-color: #00bed8
+
+#ex4 .p1[data-count]:after
+  position: absolute
+  right: 20%
+  top: 13%
+  content: attr(data-count)
+  font-size: 30%
+  padding: 0.45em
+  border-radius: 50%
+  line-height: 1em
+  color: white
+  background: #ffc107
+  text-align: center
+  min-width: 1em
+
+button:focus
+  outline: 0
+
+.btn-save
+  color: #fff
+  background-color: #00bed8
+  border-color: #00bed8
+
+.btn-all
+  border-radius: 19px
+  color: black
+  background-color: #f0f4f6
+  border-color: #f0f4f6
+
+.btn-link
+  color: #00bed8
+
+.fa-button-circle
+  color: #a6bbc4
+
+.btn-add
+  border-radius: 19px
+  background-color: $base-color
+  border-color: $base-color
+  font-size: .8em
+
+.btn-add:not(:disabled):not(.disabled):active,
+.btn-add:not(:disabled):not(.disabled).active
+  background-color: $base-color
+  border-color: $base-color
+
+.btn-add:not(:disabled):not(.disabled):active:focus,
+.btn-add:not(:disabled):not(.disabled).active:focus
+  box-shadow: 0 0 0 0.2rem rgb(0, 190, 216)
+
+.margin-top-3
+  margin-top: 3%
+
+.green_icon
+  background-color: #4cd137
+  position: absolute
+  right: 52px
+  bottom: 3px
+  height: 10px
+  width: 10px
+  border-radius: 50%
+
+.abs-center-x
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+
+.fa-nav
+  color: $base-color
+  font-size: 22px
+  font-weight: 900
+
+.nav-brand-text
+  color: $base-color
+  margin-left: 7px
+  font-weight: 600
+  font-size: 23px
+
+.active-nav
+  border-bottom: 3px solid $base-color
+  color: $base-color
+  font-weight: 900
+
+.recipe-image
+  width: 40px
+  margin-right: 2%
+
+.text-active
+  color: $base-color
+  font-size: 1em !important
+  font-weight: 800
+
+.text-active-nav
+  color: $base-color !important
+  font-weight: 900
+
+.text-table
+  color: gray
+  font-size: .9em
+  font-weight: 600
+  text-transform: uppercase
+
+.text
+  color: gray
+  font-size: .9em
+  font-weight: 400
+
+.page-item.active .page-link
+  z-index: 1
+  color: #fff
+  background-color: $base-color
+  border-color: $base-color
+
+.page-text
+  color: $base-color
+
+.nav-margin
+  margin-bottom: -15px
+
+.btn-operation
+  background-color: #e0fafb
+  border-color: #e0fafb
+  border-radius: 17px
+  font-size: .8em
+
+.btn-operation:not(:disabled):not(.disabled):active,
+.btn-operation:not(:disabled):not(.disabled).active
+  background-color: #e0fafb
+  border-color: #e0fafb
+
+.fa-operation
+  color: $base-color
+
+.radio-table
+  height: 18px
+  width: 18px
+
+.header-border
+  border: 1px solid #dee2e6
+
+.width-td
+  width: 2px
+
+.nav-item a
+  font-weight: 700 !important
+
+.fa-search-custom
+  color: #a3b4bb
+  font-weight: 100
+  font-size: 1em
+  vertical-align: -webkit-baseline-middle
+
+.active-row
+  background-color: rgba(140, 140, 140, 0.1) !important
+
+.page-link:focus
+  z-index: 2
+  outline: 0
+  box-shadow: none
+
+::selection
+  background-color: $base-color
+  color: white
+
+::-moz-selection
+  background: $base-color
+  color: white
+
+.show-modal
+  padding-right: 17px
+  display: block
+
+.btn-outline-custom
+  color: #00bed8
+  background-color: transparent
+  background-image: none
+  border-color: #00bed8
+
+.btn-outline-custom:hover
+  color: #fff
+  background-color: #00bed8
+  border-color: #00bed8

@@ -1,0 +1,46 @@
+<div class="row mt-4 ">
+
+    <div class="col-10 offset-1">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Update Profile</h5>
+            </div>
+            <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input [ngClass]="{ 'is-invalid': submitted && f.name.errors }" formControlName="name"
+                               type="text" class="form-control" placeholder="Enter name">
+                        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                            <div *ngIf="f.name.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Surname</label>
+                        <input [ngClass]="{ 'is-invalid': submitted && f.surname.errors }" formControlName="surname"
+                               type="text" class="form-control" placeholder="Enter surname">
+                        <div *ngIf="submitted && f.surname.errors" class="invalid-feedback">
+                            <div *ngIf="f.surname.errors.required">Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input [ngClass]="{ 'is-invalid': submitted && f.email.errors }" formControlName="email"
+                               type="email" class="form-control" aria-describedby="emailHelp"
+                               placeholder="Enter email">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Name is required</div>
+                        </div>
+
+                    </div>
+                    <button class="btn btn-save"><i class="fa fa-save"></i> Update</button>
+                    <button type="button" (click)="changePass()" class="btn btn-light ml-2"><i class="fa fa-key"></i> Update Password</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<app-modal></app-modal>

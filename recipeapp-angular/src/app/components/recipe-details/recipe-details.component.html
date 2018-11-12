@@ -1,0 +1,51 @@
+<div class="row mt-4 border-bottom" *ngIf="recipe">
+    <div class="col-6 mb-4">
+        <div class="card">
+            <img class="card-img-top" [src]="recipe.imageUrl || 'http://www.independentmediators.co.uk/wp-content/uploads/2016/02/placeholder-image.jpg'"
+                alt="Card image cap">
+            <div class="card-body">
+                <div class="d-flex flex-row-reverse mb-3">
+                    <div class="p-2 text-active">{{recipe.calories}} cals
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    </div>
+                    <div class="p-2 text-active">{{recipe.servings}} servings
+                        <i class="fa fa-pie-chart" aria-hidden="true"></i>
+                    </div>
+                    <div class="p-2 text-active">{{recipe.time/60}} min
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-6">
+                        <h5>{{recipe.name}}</h5>
+                    </div>
+                    <div class="col-6" *ngIf="loggedUser.id === recipe.user.id">
+                        <div class="d-flex flex-row-reverse">
+                            <span class="ml-2 pointer text-danger" [swal]="swal" (confirm)="deleteRecipe()">
+                                  <i class="fa fa-trash"></i>
+                            </span>
+                          <span class="pointer text-success" [routerLink]="['/edit-recipe',recipe.id]">
+                               <i class="fa fa-pencil"></i>
+                          </span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{recipe.description || 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem sunt voluptate officia id pariatur. Molestiae quas sit impedit! Ex dolorum id voluptatum voluptate iure. Illo rem harum exercitationem similique ipsum.'}} </p>
+            </div>
+            <div class="card-footer text-muted text-center" *ngIf="recipe.published">
+              Published: {{recipe.publishedOn | timeAgo}}
+            </div>
+        </div>
+    </div>
+</div>
