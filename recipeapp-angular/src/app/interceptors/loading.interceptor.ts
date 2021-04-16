@@ -6,7 +6,7 @@ import {
     HttpResponse
 } from '@angular/common/http';
 import {tap, catchError} from 'rxjs/operators';
-import {NgxSpinnerService} from "ngx-spinner";
+import {NgxSpinnerService} from 'ngx-spinner';
 
 @Injectable()
 export class LoadingInterceptor implements HttpInterceptor {

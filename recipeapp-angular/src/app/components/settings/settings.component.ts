@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthenticationService} from "../../services/authentication.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ToastrService} from "ngx-toastr";
-import {ModalService} from "../../services/modal.service";
+import {AuthenticationService} from '../../services/authentication.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ToastrService} from 'ngx-toastr';
+import {ModalService} from '../../services/modal.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class SettingsComponent implements OnInit {
 
     user: any;
     updateForm: FormGroup;
-    submitted: boolean = false;
+    submitted = false;
 
     constructor(private authService: AuthenticationService,
                 private formBuilder: FormBuilder,
@@ -35,7 +35,7 @@ export class SettingsComponent implements OnInit {
                 email: this.user.email,
                 name: this.user.name,
                 surname: this.user.surname
-            })
+            });
         });
     }
 
@@ -51,8 +51,8 @@ export class SettingsComponent implements OnInit {
         }
         this.user = Object.assign({}, this.updateForm.value);
         this.authService.updateProfile(this.user).subscribe(data => {
-            this.toastr.success("Profile updated!", "Success");
-        })
+            this.toastr.success('Profile updated!', 'Success');
+        });
     }
 
     changePass() {

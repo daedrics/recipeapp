@@ -87,7 +87,7 @@ public class RecipeSecurityConfiguration extends WebSecurityConfigurerAdapter {
         configuration.setMaxAge((long) 3600);
         configuration.setAllowedHeaders(Arrays.asList(HttpHeaders.AUTHORIZATION, HttpHeaders.CONTENT_TYPE));
         configuration.setAllowedMethods(
-                Arrays.asList(HttpMethod.values()).stream().map(HttpMethod::name).collect(Collectors.toList()));
+                Arrays.stream(HttpMethod.values()).map(HttpMethod::name).collect(Collectors.toList()));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return new CorsFilter(source);

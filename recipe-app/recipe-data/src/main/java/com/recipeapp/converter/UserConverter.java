@@ -1,6 +1,5 @@
 package com.recipeapp.converter;
 
-import com.recipeapp.converter.CustomConverter;
 import com.recipeapp.dto.user.UserCreateDto;
 import com.recipeapp.dto.user.UserDto;
 import com.recipeapp.entity.UserEntity;

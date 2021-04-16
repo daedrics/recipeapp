@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Recipe} from "../../models/Recipe";
-import {Observable} from "rxjs/index";
+import {Observable} from 'rxjs/index';
 import {Image} from "../../models/Image";
 import {AngularFireStorage} from "@angular/fire/storage";
 import {RecipesService} from "../../services/recipes.service";
@@ -21,7 +21,7 @@ export class CreateRecipeComponent implements OnInit {
     time = {hour: 0, minute: 0};
     recipe: Recipe;
 
-    //upload properties
+    // upload properties
     uploadPercent: Observable<number>;
     downloadURL: Observable<string>;
     image: Image = new Image();

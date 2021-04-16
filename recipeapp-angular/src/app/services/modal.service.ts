@@ -1,5 +1,5 @@
 import {Injectable, Output, EventEmitter} from '@angular/core';
-import {Modal} from "../models/Modal";
+import {Modal} from '../models/Modal';
 
 @Injectable({
     providedIn: 'root'

@@ -1,11 +1,11 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
-import {environment} from "../../environments/environment";
-import {Recipe} from "../models/Recipe";
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {environment} from '../../environments/environment';
+import {Recipe} from '../models/Recipe';
 
 @Injectable({
-    providedIn: "root"
+    providedIn: 'root'
 })
 export class RecipesService {
 

@@ -18,10 +18,10 @@ export class FiltersComponent implements OnInit {
 
     }
 
-    onSearchChange(text :string) {
+    onSearchChange(text: string) {
         clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
             this.searchText.emit(text);
-        }, 700)
+        }, 700);
     }
 }

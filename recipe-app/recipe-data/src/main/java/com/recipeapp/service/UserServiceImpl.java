@@ -1,11 +1,5 @@
 package com.recipeapp.service;
 
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import com.recipeapp.converter.UserConverter;
 import com.recipeapp.dto.user.ChangePasswordDto;
 import com.recipeapp.dto.user.UserCreateDto;
@@ -14,16 +8,21 @@ import com.recipeapp.dto.user.UserUpdateDto;
 import com.recipeapp.entity.UserEntity;
 import com.recipeapp.exception.RecipeAppBadRequestException;
 import com.recipeapp.repository.UserRepository;
-import com.recipeapp.service.UserService;
-import com.recipeapp.service.UserServiceImpl;
 import com.recipeapp.util.LoggerUtil;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
 
 	private static final Logger LOGGER = Logger.getLogger(UserServiceImpl.class);
+
 	private static final UserConverter USER_CONVERTER = new UserConverter();
+
 	private static final LoggerUtil LOGGER_UTIL = new LoggerUtil();
 
 	@Autowired

@@ -1,27 +1,30 @@
 <header>
-    <nav class="navbar navbar-light navbar-expand-md justify-content-center shadow-sm">
-        <a [routerLink]="['/home']" class="navbar-brand mr-0">
-            <img src="../../../assets/images/recipe.png"><span class="nav-brand-text">Recipes App</span>
-        </a>
-        <button class="navbar-toggler ml-1" (click)="showMenu()" type="button" data-toggle="collapse"
-                data-target="#collapsingNavbar2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div [ngClass]="{show: showClass}"
-             class="navbar-collapse collapse justify-content-between align-items-center w-100 nav-margin"
-             id="collapsingNavbar2">
-            <ul class="navbar-nav mx-auto text-center" *ngIf="loggedIn">
-                <li class="nav-item" *ngFor="let link of links">
-                    <a class="nav-link disabled text-uppercase" routerLinkActive="active-nav text-active-nav"
-                       [routerLinkActiveOptions]="{exact:true}" [routerLink]="link.path">{{link.label}}</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav flex-row justify-content-center flex-nowrap" *ngIf="loggedIn">
-                <li class="nav-item">
-                        
-                    <button type="button" class="btn btn-outline-custom" (click)="logOut()"> <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out</button>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-light navbar-expand-md justify-content-center shadow-sm">
+    <a [routerLink]="['/home']" class="navbar-brand mr-0">
+      <img src="../../../assets/images/recipe.png"><span class="nav-brand-text">Recipes App</span>
+    </a>
+    <button class="navbar-toggler ml-1" (click)="showMenu()" type="button" data-toggle="collapse"
+            data-target="#collapsingNavbar2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngClass]="{show: showClass}"
+         class="navbar-collapse collapse justify-content-between align-items-center w-100 nav-margin"
+         id="collapsingNavbar2">
+      <ul class="navbar-nav mx-auto text-center" *ngIf="loggedIn">
+        <li class="nav-item" *ngFor="let link of links">
+          <a class="nav-link  text-uppercase" routerLinkActive="active-nav text-active-nav"
+             [routerLinkActiveOptions]="{exact:true}" [routerLink]="[link.path]">{{link.label}}</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav flex-row justify-content-center flex-nowrap" *ngIf="loggedIn">
+        <li class="nav-item">
+          <button type="button"
+                  class="btn btn-outline-custom"
+                  (click)="logOut()">
+            <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </header>

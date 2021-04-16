@@ -1,12 +1,12 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {map} from "rxjs/internal/operators";
-import {Observable, Subject} from "rxjs";
-import {Router} from "@angular/router";
+import {map} from 'rxjs/internal/operators';
+import {Observable, Subject} from 'rxjs';
+import {Router} from '@angular/router';
 import {LoginBody} from '../models/LoginModel';
-import {SignUpModel} from "../models/SignUpModel";
-import {PasswordModel} from "../models/PasswordModel";
+import {SignUpModel} from '../models/SignUpModel';
+import {PasswordModel} from '../models/PasswordModel';
 
 @Injectable({
     providedIn: 'root'
@@ -31,7 +31,7 @@ export class AuthenticationService {
 
 
     signUp(signUpModel: SignUpModel): Observable<SignUpModel> {
-        return this.http.post<SignUpModel>(`${environment.baseUrl}/users/signup`, signUpModel)
+        return this.http.post<SignUpModel>(`${environment.baseUrl}/users/signup`, signUpModel);
     }
 
     logout() {
@@ -57,15 +57,16 @@ export class AuthenticationService {
     }
 
     isLoggedIn() {
-        let user = JSON.parse(localStorage.getItem('user'));
+        const user = JSON.parse(localStorage.getItem('user'));
         if (user && user.token) {
             return true;
-        } else
+        } else {
             return false;
+        }
     }
 
     loggedUser() {
-        let user = JSON.parse(localStorage.getItem('user'));
+        const user = JSON.parse(localStorage.getItem('user'));
         return user;
     }
 }
