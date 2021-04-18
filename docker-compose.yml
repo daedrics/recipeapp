@@ -18,7 +18,7 @@ services:
       - front-end
       - back-end
   mysql:
-    image: mysql:5.7
+    image: mariadb:10.4
     networks:
       - back-end
     volumes:
