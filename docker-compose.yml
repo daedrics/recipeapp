@@ -23,7 +23,7 @@ services:
       - back-end
     volumes:
       - recipe-app-data:/var/lib/mysql
-      - ./db/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./db/setup.sql:/docker-entrypoint-initdb.d/dump.sql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: recipeapp
