@@ -15,7 +15,6 @@ services:
     ports:
     - 8081:8080
     networks:
-      - front-end
       - back-end
   mysql:
     image: mysql:5.7
