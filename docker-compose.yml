@@ -19,6 +19,7 @@ services:
       - back-end
   mysql:
     image: mariadb:10.4
+    container_name: mysql
     ports:
     - 3307:3306
     networks:
